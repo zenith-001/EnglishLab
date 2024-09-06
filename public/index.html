@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Streaming Site</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Link to Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-film"></i>
+      <span>MyStream</span>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#"><i class="fa-solid fa-clapperboard"></i> Movies</a></li>
+        <li><a href="#"><i class="fa-solid fa-tv"></i> TV Shows</a></li>
+        <li><a href="#"><i class="fa-solid fa-star"></i> Trending</a></li>
+      </ul>
+    </nav>
+    <div class="user-profile">
+      <i class="fa-solid fa-user-circle"></i>
+      <span>Profile</span>
+    </div>
+  </header>
+  <div class="dimmer"></div>
+  <!-- Movie Carousel Section -->
+  <section class="movie-carousel">
+    <div class="carousel-container">
+      <div class="carousel">
+        <!-- Movie Banner Items -->
+        <div class="movie-item">
+          <img src="/res/banner_v.webp" alt="Movie 1">
+          <div class="movie-description">
+            <h2><i class="fa-solid fa-video"></i> Movie 1</h2>
+            <p>A thrilling adventure awaits in Movie 1.</p>
+          </div>
+        </div>
+        <div class="movie-item">
+          <img src="/res/banner_v.webp" alt="Movie 2">
+          <div class="movie-description">
+            <h2><i class="fa-solid fa-video"></i> Movie 2</h2>
+            <p>Experience the drama and excitement of Movie 2.</p>
+          </div>
+        </div>
+        <div class="movie-item">
+          <img src="/res/banner_v.webp" alt="Movie 3">
+          <div class="movie-description">
+            <h2><i class="fa-solid fa-video"></i> Movie 3</h2>
+            <p>A heart-pounding journey in Movie 3.</p>
+          </div>
+        </div>
+        <!-- Add more movie items as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript to Handle the Stop and Pop-out Effect -->
+  <script>
+    const carousel = document.querySelector('.carousel');
+    const movieItems = document.querySelectorAll('.movie-item');
+
+    movieItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        carousel.classList.add('paused'); // Pause the carousel
+        item.classList.add('focus'); // Pop-out the focused movie
+        document.querySelector(".dimmer").style.display = "none";
+    });
+    
+    item.addEventListener('mouseleave', () => {
+        carousel.classList.remove('paused'); // Resume the carousel
+        item.classList.remove('focus'); // Remove pop-out effect
+        document.querySelector(".dimmer").style.display = "block";
+      });
+    });
+  </script>
+</body>
+</html>

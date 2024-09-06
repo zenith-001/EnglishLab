@@ -1,0 +1,171 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Netflix-Inspired Color Theme */
+  :root {
+    --primary-color: #e50914; /* Netflix Red */
+    --background-color: #141414; /* Dark Background */
+    --text-color: #ffffff; /* White Text */
+    --overlay-color: rgba(0, 0, 0, 0.8); /* Overlay for pop-ups */
+  }
+  
+  /* Body Styling */
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--background-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 30;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: var(--primary-color);
+  }
+  
+  .logo i {
+    margin-right: 8px;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+  
+  .user-profile {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+  }
+  
+  .user-profile i {
+    margin-right: 8px;
+  }
+  
+  /* Movie Carousel Section */
+  .movie-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    padding-top: 60px; /* To avoid overlap with navbar */
+  }
+  
+  .carousel-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .carousel {
+    display: flex;
+    height: 100%;
+    animation: marquee 30s linear infinite; /* Marquee effect */
+    transition: transform 0.3s ease;
+  }
+  
+  .carousel.paused {
+    animation-play-state: paused; /* Pause the animation when a movie is focused */
+  }
+  
+  .movie-item {
+    flex: 0 0 350px; /* Width of the movie banners */
+    margin: 0 10px;
+    height: 570px; /* Height of the movie banners */
+    overflow: hidden;
+    position: relative;
+    transform: scale(1);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+  }
+  
+  .movie-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .movie-description {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    background: var(--overlay-color);
+    padding: 10px;
+    border-radius: 8px;
+    color: var(--text-color);
+    display: none;
+    font-size: 14px;
+  }
+  
+  .movie-item.focus {
+    transform: scale(1.1); /* Pop-out effect */
+    cursor: pointer;
+  }
+  
+  .movie-item.focus img {
+    filter: brightness(1.2); /* Slightly brighten the image when focused */
+  }
+  
+  .movie-item.focus .movie-description {
+    display: block; /* Show the description when focused */
+  }
+  
+  /* a div to dim out the whole site */
+  .dimmer{
+    height: 100vh;
+    width: 100vw;
+    background:#141414A5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    display: block;
+    transition: .5s;
+  }
+  /* Marquee Animation */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
