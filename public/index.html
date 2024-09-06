@@ -17,7 +17,10 @@
     </div>
     
     <div class="user-profile">
-      <i class="fa-solid fa-search"></i>
+      <div class="search-extended">
+        <input type="text">
+      </div>
+      <i id="search-icon" class="fa-solid fa-search"></i>
     </div>
   </header>
   <!-- Movie Carousel Section -->
@@ -146,6 +149,21 @@
         item.classList.remove('focus'); // Remove pop-out effect
         document.querySelector(".dimmer").style.display = "block";
       });
+    });
+    const search_btn = document.querySelector("#search-icon");
+    const search_extended = document.querySelector(".search-extended");
+    let search_extend = 0;
+    search_btn.addEventListener("click",()=>{
+      if(search_extend == 0){
+        search_extend = 1;
+        search_extended.classList.add("valid");
+        search_btn.classList.add("valid");
+      }
+      else{
+        search_extend = 0;
+        search_extended.classList.remove("valid");
+        search_btn.classList.remove("valid");
+      }
     });
   </script>
 </body>
