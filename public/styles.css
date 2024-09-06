@@ -584,3 +584,71 @@ button {
   margin-bottom: -34px;
   border: 1px solid white;
 }
+/* 
+.cs-dimmer{
+  display: none;
+  height: 0vh;
+  width: 0vw;
+  position: fixed;
+  top: 0;
+  transition:.5s;
+  left: 0;
+  z-index: -10;
+  background: #14141400;
+}
+
+.cs-dimmer.active{
+  height: 100vh;
+  z-index: 9999;
+  width: 100vw;
+  display: block;
+  background: #06060699;
+  backdrop-filter: blur(8px);
+} */
+
+.cs-menu{
+  height: 0px;
+  width: 0px;
+  overflow: hidden;
+  z-index: 10;
+  position: fixed;
+  bottom: 10%;
+  border: 0px solid white;
+  border-radius: 8px;
+  right: 3.5%;
+  transition: .5s;
+}
+.cs-menu.active{
+  transition: .5s;
+  height: 120px;
+  overflow: hidden;
+  width: 250px;
+  z-index: 10000;
+  position: fixed;
+  bottom: 10%;
+  border:  .5px solid white;
+  border-radius: 8px;
+  right: 3.5%;
+  background: #14141455;
+  backdrop-filter: blur(8px);
+  padding: 7px;
+
+}
+.cs-menu .cs-title{
+  margin: 5px;
+  font-size: 20px;
+  font-weight: bolder;
+  display: inline-block;
+}
+.cs-menu .cs-close{
+  float: right;
+  margin: 7px;
+  font-size: 20px;
+  display: inline-block;
+}
+.cs-menu button{
+  color: white;
+  background: #232323;
+  padding: 4px;
+  border-radius: 3px;
+}

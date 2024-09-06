@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Streaming Site</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="movie.css" />
+    <!-- Link to Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+      <div class="logo">
+        <img src="res/logo.png" height="50px" alt="" />
+      </div>
+
+      <div class="user-profile">
+        <div class="search-extended">
+          <input placeholder="Search Here" type="text" />
+        </div>
+        <i id="search-icon" class="fa-solid fa-search"></i>
+      </div>
+    </header>
+    <!-- Movie Carousel Section -->
+    <section class="movie-carousel">
+        <div class="background"></div>
+        
+    </section>
+     <!-- JavaScript to Handle the Stop and Pop-out Effect -->
+    <script>
+      const search_btn = document.querySelector("#search-icon");
+      const search_extended = document.querySelector(".search-extended");
+      let search_extend = 0;
+      search_btn.addEventListener("click", () => {
+        if (search_extend == 0) {
+          search_extend = 1;
+          search_extended.classList.add("valid");
+          search_btn.classList.add("valid");
+        } else {
+          search_extend = 0;
+          search_extended.classList.remove("valid");
+          search_btn.classList.remove("valid");
+        }
+      });
+    </script>
+  </body>
+</html>

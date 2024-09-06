@@ -1,243 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Streaming Site</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- Link to Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-  <!-- Navigation Bar -->
-  <header class="navbar">
-    <div class="logo">
-      <img src="res/logo.png" height="70px" alt="">
-    </div>
-    
-    <div class="user-profile">
-      <div class="search-extended">
-        <input placeholder="Search Here" type="text">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Streaming Site</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Link to Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+      <div class="logo">
+        <img src="res/logo.png" height="70px" alt="" />
       </div>
-      <i id="search-icon" class="fa-solid fa-search"></i>
-    </div>
-  </header>
-  <!-- Movie Carousel Section -->
-  <section class="movie-carousel">
-    <div class="slider">
-      <button class="slider--btn slider--btn__prev">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="m15 18-6-6 6-6" />
-        </svg>
-      </button>
-    
-      <div class="slides__wrapper">
-        <div class="slides">
-          <!-- slide 1 -->
-          <div class="slide" data-current>
-            <div class="slide__inner">
-              <div class="slide--image__wrapper">
-                <img class="slide--image" src="https://devloop01.github.io/voyage-slider/images/scotland-mountains.jpg" alt="Image 1" />
-              </div>
-            </div>
-          </div>
-          <div class="slide__bg" style="--bg: url(https://devloop01.github.io/voyage-slider/images/scotland-mountains.jpg); --dir: 0" data-current></div>
-    
-          <!-- slide 2 -->
-          <div class="slide" data-next>
-            <div class="slide__inner">
-              <div class="slide--image__wrapper">
-                <img class="slide--image" src="
-    https://devloop01.github.io/voyage-slider/images/machu-pichu.jpg" alt="Image 2" />
-              </div>
-            </div>
-          </div>
-          <div class="slide__bg" style="--bg: url(https://devloop01.github.io/voyage-slider/images/machu-pichu.jpg); --dir: 1" data-next></div>
-    
-          <!-- slide 3 -->
-          <div class="slide" data-previous>
-            <div class="slide__inner">
-              <div class="slide--image__wrapper">
-                <img class="slide--image" src="https://devloop01.github.io/voyage-slider/images/chamonix.jpg" alt="Image 3" />
-              </div>
-            </div>
-          </div>
-          <div class="slide__bg" style="--bg: url(https://devloop01.github.io/voyage-slider/images/chamonix.jpg); --dir: -1" data-previous></div>
+
+      <div class="user-profile">
+        <div class="search-extended">
+          <input placeholder="Search Here" type="text" />
         </div>
-        <div class="slides--infos">
-          <!-- Slide Info 1 -->
-          <div class="slide-info" data-current>
-            <div class="slide-info__inner">
-              <div class="slide-info--text__wrapper">
-                <div data-title class="slide-info--text">
-                  <span>Highlands</span>
-                </div>
-                <div data-subtitle class="slide-info--text">
-                  <span>Scotland</span>
-                </div>
-                <div data-description class="slide-info--text">
-                  <span>The mountains are calling</span>
-                </div>
-              </div>
-            </div>
-          </div>
-    
-          <!-- Slide Info 2 -->
-          <div class="slide-info" data-next>
-            <div class="slide-info__inner">
-              <div class="slide-info--text__wrapper">
-                <div data-title class="slide-info--text">
-                  <span>Movie 1</span>
-                </div>
-                <div data-subtitle class="slide-info--text">
-                  <span>Something</span>
-                </div>
-                <div data-description class="slide-info--text">
-                  <span>this movie is nice</span>
-                </div>
-              </div>
-            </div>
-          </div>
-    
-          <!-- Slide Info 3 -->
-          <div class="slide-info" data-previous>
-            <div class="slide-info__inner">
-              <div class="slide-info--text__wrapper">
-                <div data-title class="slide-info--text">
-                  <span>Chamonix</span>
-                </div>
-                <div data-subtitle class="slide-info--text">
-                  <span>France</span>
-                </div>
-                <div data-description class="slide-info--text">
-                  <span>Let your dreams come true</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <i id="search-icon" class="fa-solid fa-search"></i>
       </div>
-    
-      <button class="slider--btn slider--btn__next">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="m9 18 6-6-6-6" />
-        </svg>
-      </button>
-    </div>
-    
-    <div class="loader">
-      <span class="loader__text">0%</span>
-    </div>
-    
-  </section>
-<br><br><br><hr width="100vw"><br><br><br>
-  <section>
-    <h1>Welcome Back! </h1>
-    <div class="row">
-      <figure class="figure">
-        <img src="https://images.pexels.com/photos/87477/winter-snow-tree-den-87477.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-        <figcaption>
-          <h3 class="title1">The</h3>
-          <h3 class="title2">Winter</h3>
-          <h3 class="title3">Collection</h3>
-        </figcaption>
-        <a href="#"></a>
-      </figure>
-      <figure class="figure">
-        <img src="https://images.pexels.com/photos/1477199/pexels-photo-1477199.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-        <figcaption>
-          <h3 class="title1">The</h3>
-          <h3 class="title2">Autumn</h3>
-          <h3 class="title3">Collection</h3>
-        </figcaption>
-        <a href="#"></a>
-      </figure>
-      <figure class="figure">
-        <img src="https://images.pexels.com/photos/2187322/pexels-photo-2187322.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-        <figcaption>
-          <h3 class="title1">The</h3>
-          <h3 class="title2">Spring</h3>
-          <h3 class="title3">Collection</h3>
-        </figcaption>
-        <a href="#"></a>
-      </figure><figure class="figure">
-        <img src="https://images.pexels.com/photos/2187322/pexels-photo-2187322.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-        <figcaption>
-          <h3 class="title1">The</h3>
-          <h3 class="title2">Spring</h3>
-          <h3 class="title3">Collection</h3>
-        </figcaption>
-        <a href="#"></a>
-      </figure><figure class="figure">
-        <img src="https://images.pexels.com/photos/2187322/pexels-photo-2187322.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-        <figcaption>
-          <h3 class="title1">The</h3>
-          <h3 class="title2">Spring</h3>
-          <h3 class="title3">Collection</h3>
-        </figcaption>
-        <a href="#"></a>
-      </figure>
-    </div>
-  </section>
+    </header>
+    <!-- Movie Carousel Section -->
+    <section class="movie-carousel">
+      <div class="slider">
+        <button class="slider--btn slider--btn__prev">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+        </button>
 
-<!-- Class Selector -->
- <div class="class-selector">
-  <i class="fa-sharp fa-solid fa-graduation-cap"></i> Select Class
- </div>
- <!-- dimmer for class selector -->
- <div class="cs-dimmer">
-  
- </div>
+        <div class="slides__wrapper">
+          <div class="slides">
+            <!-- slide 1 -->
+            <div class="slide" data-current>
+              <div class="slide__inner">
+                <div class="slide--image__wrapper">
+                  <img
+                    class="slide--image"
+                    src="https://devloop01.github.io/voyage-slider/images/scotland-mountains.jpg"
+                    alt="Image 1"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="slide__bg"
+              style="
+                --bg: url(https://devloop01.github.io/voyage-slider/images/scotland-mountains.jpg);
+                --dir: 0;
+              "
+              data-current
+            ></div>
 
-  <!-- JavaScript to Handle the Stop and Pop-out Effect -->
-  <script>
-    const carousel = document.querySelector('.carousel');
-    const movieItems = document.querySelectorAll('.movie-item');
+            <!-- slide 2 -->
+            <div class="slide" data-next>
+              <div class="slide__inner">
+                <div class="slide--image__wrapper">
+                  <img
+                    class="slide--image"
+                    src="
+    https://devloop01.github.io/voyage-slider/images/machu-pichu.jpg"
+                    alt="Image 2"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="slide__bg"
+              style="
+                --bg: url(https://devloop01.github.io/voyage-slider/images/machu-pichu.jpg);
+                --dir: 1;
+              "
+              data-next
+            ></div>
 
-    movieItems.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        carousel.classList.add('paused'); // Pause the carousel
-        item.classList.add('focus'); // Pop-out the focused movie
-        document.querySelector(".dimmer").style.display = "none";
-    });
-    
-    item.addEventListener('mouseleave', () => {
-        carousel.classList.remove('paused'); // Resume the carousel
-        item.classList.remove('focus'); // Remove pop-out effect
-        document.querySelector(".dimmer").style.display = "block";
+            <!-- slide 3 -->
+            <div class="slide" data-previous>
+              <div class="slide__inner">
+                <div class="slide--image__wrapper">
+                  <img
+                    class="slide--image"
+                    src="https://devloop01.github.io/voyage-slider/images/chamonix.jpg"
+                    alt="Image 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="slide__bg"
+              style="
+                --bg: url(https://devloop01.github.io/voyage-slider/images/chamonix.jpg);
+                --dir: -1;
+              "
+              data-previous
+            ></div>
+          </div>
+          <div class="slides--infos">
+            <!-- Slide Info 1 -->
+            <div class="slide-info" data-current>
+              <div class="slide-info__inner">
+                <div class="slide-info--text__wrapper">
+                  <div data-title class="slide-info--text">
+                    <span>Highlands</span>
+                  </div>
+                  <div data-subtitle class="slide-info--text">
+                    <span>Scotland</span>
+                  </div>
+                  <div data-description class="slide-info--text">
+                    <span>The mountains are calling</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide Info 2 -->
+            <div class="slide-info" data-next>
+              <div class="slide-info__inner">
+                <div class="slide-info--text__wrapper">
+                  <div data-title class="slide-info--text">
+                    <span>Movie 1</span>
+                  </div>
+                  <div data-subtitle class="slide-info--text">
+                    <span>Something</span>
+                  </div>
+                  <div data-description class="slide-info--text">
+                    <span>this movie is nice</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide Info 3 -->
+            <div class="slide-info" data-previous>
+              <div class="slide-info__inner">
+                <div class="slide-info--text__wrapper">
+                  <div data-title class="slide-info--text">
+                    <span>Chamonix</span>
+                  </div>
+                  <div data-subtitle class="slide-info--text">
+                    <span>France</span>
+                  </div>
+                  <div data-description class="slide-info--text">
+                    <span>Let your dreams come true</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="slider--btn slider--btn__next">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="loader">
+        <span class="loader__text">0%</span>
+      </div>
+    </section>
+    <br /><br /><br />
+    <hr width="100vw" />
+    <br /><br /><br />
+    <section>
+      <h1>Welcome Back!</h1>
+      <div class="row">
+        <figure class="figure">
+          <img
+            src="https://images.pexels.com/photos/87477/winter-snow-tree-den-87477.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          />
+          <figcaption>
+            <h3 class="title1">The</h3>
+            <h3 class="title2">Winter</h3>
+            <h3 class="title3">Collection</h3>
+          </figcaption>
+          <a href="#"></a>
+        </figure>
+        <figure class="figure">
+          <img
+            src="https://images.pexels.com/photos/1477199/pexels-photo-1477199.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          />
+          <figcaption>
+            <h3 class="title1">The</h3>
+            <h3 class="title2">Autumn</h3>
+            <h3 class="title3">Collection</h3>
+          </figcaption>
+          <a href="#"></a>
+        </figure>
+        <figure class="figure">
+          <img
+            src="https://images.pexels.com/photos/2187322/pexels-photo-2187322.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          />
+          <figcaption>
+            <h3 class="title1">The</h3>
+            <h3 class="title2">Spring</h3>
+            <h3 class="title3">Collection</h3>
+          </figcaption>
+          <a href="#"></a>
+        </figure>
+        <figure class="figure">
+          <img
+            src="https://images.pexels.com/photos/2187322/pexels-photo-2187322.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          />
+          <figcaption>
+            <h3 class="title1">The</h3>
+            <h3 class="title2">Spring</h3>
+            <h3 class="title3">Collection</h3>
+          </figcaption>
+          <a href="#"></a>
+        </figure>
+        <figure class="figure">
+          <img
+            src="https://images.pexels.com/photos/2187322/pexels-photo-2187322.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          />
+          <figcaption>
+            <h3 class="title1">The</h3>
+            <h3 class="title2">Spring</h3>
+            <h3 class="title3">Collection</h3>
+          </figcaption>
+          <a href="#"></a>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Class Selector -->
+    <div class="class-selector">
+      <i class="fa-sharp fa-solid fa-graduation-cap"></i> Select Class
+    </div>
+    <!-- dimmer for class selector -->
+    <div class="cs-dimmer"></div>
+    <div class="cs-menu">
+      <div class="cs-title">&nbsp;&nbsp;Select Class: </div>
+      <div
+        onclick="document.querySelector('.class-selector').click();"
+        class="cs-close"
+      >
+        <i class="fa fa-times"></i>
+      </div><br>
+      <label for="cs-class">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class: </label>
+      <select name="cs-class" id="cs-class">
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="A1">A1</option>
+        <option value="A2">A2</option>
+      </select><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button><i class="fa-solid fa-play"></i> Go</button>
+    </div>
+
+    <!-- JavaScript to Handle the Stop and Pop-out Effect -->
+    <script>
+      
+      const search_btn = document.querySelector("#search-icon");
+      const search_extended = document.querySelector(".search-extended");
+      let search_extend = 0;
+      search_btn.addEventListener("click", () => {
+        if (search_extend == 0) {
+          search_extend = 1;
+          search_extended.classList.add("valid");
+          search_btn.classList.add("valid");
+        } else {
+          search_extend = 0;
+          search_extended.classList.remove("valid");
+          search_btn.classList.remove("valid");
+        }
       });
-    });
-    const search_btn = document.querySelector("#search-icon");
-    const search_extended = document.querySelector(".search-extended");
-    let search_extend = 0;
-    search_btn.addEventListener("click",()=>{
-      if(search_extend == 0){
-        search_extend = 1;
-        search_extended.classList.add("valid");
-        search_btn.classList.add("valid");
-      }
-      else{
-        search_extend = 0;
-        search_extended.classList.remove("valid");
-        search_btn.classList.remove("valid");
-      }
-    });
 
-
-    const class_selector = document.querySelector(".class-selector");
-    let class_select= 0
-    class_selector.addEventListener("click",()=>{
-      if(class_select == 0){
-        class_select = 1;
-        class_selector.classList.add("active");
-      }
-      else{
-        class_select = 0;
-        class_selector.classList.remove("active");
-      }
-    })
-  </script>
-</body>
-<script type="module" src="js/slider.js"></script>
+      const class_selector = document.querySelector(".class-selector");
+      let class_select = 0;
+      class_selector.addEventListener("click", () => {
+        if (class_select == 0) {
+          class_select = 1;
+          class_selector.classList.add("active");
+          document.querySelector(".cs-menu").classList.add("active");
+        } else {
+          class_select = 0;
+          class_selector.classList.remove("active");
+          document.querySelector(".cs-menu").classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+  <script type="module" src="js/slider.js"></script>
 </html>

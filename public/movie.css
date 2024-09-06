@@ -1,0 +1,42 @@
+.background{
+    height: 100vh;
+    width: 100vw;
+    background: url("https://devloop01.github.io/voyage-slider/images/scotland-mountains.jpg");
+    background-size:100vw;
+    filter: blur(20px) brightness(40%);
+    margin: 0;
+    padding: 0;
+}
+
+.search-extended{
+    padding: 0;
+    margin: 0;
+    margin-right: 12px;
+    width: 0px;
+    overflow: hidden;
+    transition: .7s;
+  }
+  
+  .search-extended.valid{
+    width: 170px;
+    transition: .7s;
+  }
+  .search-extended input{
+    margin: 0;
+    padding: 4px;
+    width: 170px;
+    font-family: poppins;
+    font-size: 13px;
+    background: none;
+    border: 1px solid white;
+    color: white;
+    outline: none;
+  }
+  #search-icon.valid{
+    border: 1px solid white;
+    border-left: 0;
+    margin: 0;
+    padding: 7px;
+    margin-left: -12px;
+  }
+  
