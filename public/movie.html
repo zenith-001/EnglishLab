@@ -7,6 +7,7 @@
     <title>Movie Streaming Site</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="movie.css" />
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
     <!-- Link to Font Awesome for icons -->
     <link
       rel="stylesheet"
@@ -29,10 +30,33 @@
     </header>
     <!-- Movie Carousel Section -->
     <section class="movie-carousel">
-        <div class="background"></div>
-        
+      <div class="background"></div>
+      <div class="player">
+        <video
+          id="my-video"
+          class="video-js"
+          controls
+          preload="auto"
+          width="850"
+          height="450"
+          poster="res/logo.png"
+          data-setup="{}"
+        >
+          <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+          <source src="MY_VIDEO.webm" type="video/webm" />
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading
+            to a web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank"
+              >supports HTML5 video</a
+            >
+          </p>
+        </video>
+      </div>
+      <div class="control-right"></div>
+      <div class="info-bottom"></div>
     </section>
-     <!-- JavaScript to Handle the Stop and Pop-out Effect -->
+    <!-- JavaScript to Handle the Stop and Pop-out Effect -->
     <script>
       const search_btn = document.querySelector("#search-icon");
       const search_extended = document.querySelector(".search-extended");
@@ -50,4 +74,5 @@
       });
     </script>
   </body>
+  <script src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>
 </html>

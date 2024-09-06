@@ -39,4 +39,17 @@
     padding: 7px;
     margin-left: -12px;
   }
-  
+ 
+  .player{
+    position: absolute;
+    top: 10%;
+    left: 20px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .info-bottom{
+    height: 50px;
+    background: #000;
+  }
