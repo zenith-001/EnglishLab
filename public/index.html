@@ -182,8 +182,12 @@
   </section>
 
 <!-- Class Selector -->
- <div class="class_selector">
+ <div class="class-selector">
   <i class="fa-sharp fa-solid fa-graduation-cap"></i> Select Class
+ </div>
+ <!-- dimmer for class selector -->
+ <div class="cs-dimmer">
+  
  </div>
 
   <!-- JavaScript to Handle the Stop and Pop-out Effect -->
@@ -219,6 +223,20 @@
         search_btn.classList.remove("valid");
       }
     });
+
+
+    const class_selector = document.querySelector(".class-selector");
+    let class_select= 0
+    class_selector.addEventListener("click",()=>{
+      if(class_select == 0){
+        class_select = 1;
+        class_selector.classList.add("active");
+      }
+      else{
+        class_select = 0;
+        class_selector.classList.remove("active");
+      }
+    })
   </script>
 </body>
 <script type="module" src="js/slider.js"></script>

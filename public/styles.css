@@ -537,3 +537,50 @@ button {
 
 
 /* Class Selector styles */
+.class-selector{
+  position: fixed;
+  bottom: 5%;
+  right: 3%;
+  cursor: pointer;
+}
+.class-selector::after{
+  content: "";
+  display: block;
+  background: white;
+  height: 1.4px;
+  width: 21.5px;
+  border-radius: 12px;
+  transition: .5s;
+}
+
+.class-selector:hover::after{
+  content: "";
+  display: block;
+  background: white;
+  height: 1.4px;
+  width: 100%;
+  transition: .5s;
+  border-radius: 12px;
+}
+.class-selector::before{
+  transition: .5s;
+  content: "";
+  display: block;
+  padding: 0px;
+  height: 0px;
+  width: 0%;
+  margin-left: 0%;
+  margin-bottom: 0px;
+  border: 0px solid white;
+}
+.class-selector.active::before{
+  transition: .5s;
+  content: "";
+  display: block;
+  padding: 4px;
+  height: 30px;
+  width: 110%;
+  margin-left: -7.5%;
+  margin-bottom: -34px;
+  border: 1px solid white;
+}
